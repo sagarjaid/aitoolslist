@@ -1,4 +1,4 @@
-import Cards from "@/components/cards";
+import Cards from "@/components/Cards";
 import Catg from "@/components/Catg";
 import Hero from "@/components/Hero";
 import Nav from "@/components/Nav";
