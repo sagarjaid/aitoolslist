@@ -1,5 +1,6 @@
 import Cards from "@/components/Cards";
 import Catg from "@/components/Catg";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Nav from "@/components/Nav";
 import Head from "next/head";
@@ -13,12 +14,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className=" mx-auto max-w-7xl gap-4 px-6 md:px-6">
+      <main className="flex flex-col mx-auto max-w-7xl gap-12 px-6 md:px-6">
         <Nav />
         <Hero />
-        {/* <Catg /> */}
+        <Catg />
         <Cards />
       </main>
+      <Footer/>
     </>
   );
 }
