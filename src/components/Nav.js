@@ -6,8 +6,9 @@ const Nav = () => {
       <span className="font-medium text-xl border  py-2 px-4 hover:text-black text-white hover:border-black hover:bg-white bg-black cursor-pointer rounded-md ">AiToolsList</span>
       <span>
         <ul className="flex row gap-4 cursor-pointer">
+        <li className="hover:font-semibold"><a href="/tool/t">randomize it!</a></li>
         <li className="hover:font-semibold">tags</li>
-          <li className="hover:font-semibold">Submit</li>
+        <li className="hover:font-semibold">submit</li>
         </ul>
       </span>
     </nav>
