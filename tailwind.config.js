@@ -37,6 +37,9 @@ module.exports = {
       xxl: "1536px",
       // => @media (min-width: 1280px) { ... }
     },
+    fontFamily: {
+      sans: ["Poppins", "sans-serif"],
+    },
     extend: {},
   },
   plugins: [],
