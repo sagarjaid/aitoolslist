@@ -1,11 +1,24 @@
-import Cards from "@/components/Cards";
-import Catg from "@/components/Catg";
+import Tags from "@/components/Tags";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Nav from "@/components/Nav";
 import Head from "next/head";
+import React, { useEffect, useState } from "react";
+import Cardv2 from "@/components/Cardv2";
 
 export default function Home() {
+
+  const [data, setData] = useState('');
+
+  useEffect(() => {
+    let url = 'https://api.sheety.co/33d9ec27f5c7dfb130eb655baacab48d/aitoolslist/data';
+    fetch(url)
+      .then((response) => response.json())
+      .then(json => {
+        setData(json.data)
+      });
+  }, []);
+  
   return (
     <>
       <Head>
@@ -14,11 +27,38 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex flex-col mx-auto max-w-7xl gap-12 px-6 md:px-6">
+      <main className="flex flex-col mx-auto max-w-7xl gap-12 s:p-3 xs:px-4">
         <Nav />
         <Hero />
-        <Catg />
-        <Cards />
+        <Tags />
+        <div className="flex flex-wrap">
+      {data ?
+        data.map((item) => {
+          return (
+            <Cardv2
+              key={item.id}
+              item={item}
+              name={item.name}
+              website={item.website}
+              title={item.title}
+              description={item.description}
+              price={item.price}
+              tag1={item.tag1}
+              tag2={item?.tag2}
+              tag3={item?.tag3}
+              tag4={item?.tag4}
+              url={item.url}
+              icon={item.icon}
+              slug={item.slug}
+              upvote={item.upvote}
+              id={item.id}
+            />
+          )
+        })
+        :
+        <div className="text-lg text-center w-full mt-6">Loading...</div>
+      }
+    </div>
       </main>
       <Footer/>
     </>

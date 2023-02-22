@@ -3,7 +3,6 @@ import Head from "next/head";
 import Footer from '@/components/Footer';
 import Nav from '@/components/Nav';
 import Cardv2 from '@/components/Cardv2';
-import Cardv3 from '@/components/Cardv3';
 import Tool from '@/components/Tool';
 
 const AiPage = () => {
@@ -15,23 +14,22 @@ const AiPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex flex-col mx-auto max-w-7xl gap-8 px-6 md:px-6">
+      <main className="flex flex-col mx-auto max-w-7xl gap-8 s:p-3 xs:px-4">
         <Nav />
         <Tool
           name="Careerdekho Ai"
           coverImg="https://openai.com/content/images/2022/05/twitter-1.png"
           title="CAREERDEKHO Ai — AI Career Discovery Tool"
-          description="Find the perfect career for you with the help of AI. Let our AI-powered 
-      career discovery tool help you find the perfect career fit!"
+          description="Find the perfect career for you with the help of AI. Let our AI-powered career discovery tool help you find the perfect career fit!"
           price="FREE"
-          tag_1="Job"
-          tag_2="Career"
+          tag1="Job"
+          tag2="Career"
           url="https://careerdekho.ai/"
-          icon="https://careerdekho.ai/favicon.svg" />
-
-        
-
-
+          icon="https://careerdekho.ai/favicon.svg" 
+          />
+        <div className='text-xl'>
+          {"Careerdekho Ai"} Alternative AI Tools
+        </div>
         <div className="flex flex-wrap">
           <Cardv2
             name="Careerdekho Ai"
@@ -40,8 +38,8 @@ const AiPage = () => {
             description="Find the perfect career for you with the help of AI. Let our AI-powered 
         career discovery tool help you find the perfect career fit!"
             price="FREE"
-            tag_1="Job"
-            tag_2="Career"
+            tag1="Job"
+            tag2="Career"
             url="https://careerdekho.ai/"
             icon="https://careerdekho.ai/favicon.svg"
           />
@@ -52,8 +50,8 @@ const AiPage = () => {
             description="Find the perfect career for you with the help of AI. Let our AI-powered 
         career discovery tool help you find the perfect career fit!"
             price="FREE"
-            tag_1="Job"
-            tag_2="Career"
+            tag1="Job"
+            tag2="Career"
             url="https://careerdekho.ai/"
             icon="https://careerdekho.ai/favicon.svg"
           />
@@ -61,11 +59,10 @@ const AiPage = () => {
             name="Careerdekho Ai"
             coverImg="https://openai.com/content/images/2022/05/twitter-1.png"
             title="CAREERDEKHO Ai — AI Career Discovery Tool"
-            description="Find the perfect career for you with the help of AI. Let our AI-powered 
-        career discovery tool help you find the perfect career fit!"
+            description="Find the perfect career for you with the help of AI. Let our AI-powered career discovery tool help you find the perfect career fit!"
             price="FREE"
-            tag_1="Job"
-            tag_2="Career"
+            tag1="Job"
+            tag2="Career"
             url="https://careerdekho.ai/"
             icon="https://careerdekho.ai/favicon.svg"
           />

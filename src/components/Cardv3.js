@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Cardv3 = ({ name, coverImg, description, title, price, tag_1, tag_2, url, icon }) => {
+const Cardv3 = ({ name, coverImg, description, title, price, tag1, tag2, url, icon }) => {
     return (
         <div className="w-full sdm:w-1/2 l:w-1/3">
             <div className='flex flex-col border m-1 rounded-xl'>
@@ -9,8 +9,8 @@ const Cardv3 = ({ name, coverImg, description, title, price, tag_1, tag_2, url, 
                     <div className='text-black font-semibold'>{name}</div>
                     <div className='text-xs'>{title}</div>
                     <div className='flex gap-2 text-sm'>
-                    <span className='border rounded-full max-w-max px-2 py-1'>{tag_1}</span>
-                    <span className='border rounded-full max-w-max px-2 py-1'>{tag_2}</span>
+                    <span className='border rounded-full max-w-max px-2 py-1'>{tag1}</span>
+                    <span className='border rounded-full max-w-max px-2 py-1'>{tag2}</span>
                 </div>
                 <div className='text-sm'>{description}</div>
                 <div className='flex justify-between items-center mt-4'>

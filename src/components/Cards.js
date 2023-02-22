@@ -1,300 +1,47 @@
-import React from "react";
-import Card from "./Card";
+import React, { useEffect, useState } from "react";
 import Cardv2 from "./Cardv2";
 
 const Cards = () => {
+  const [data, setData] = useState('');
+
+  useEffect(() => {
+    let url = 'https://api.sheety.co/33d9ec27f5c7dfb130eb655baacab48d/aitoolslist/data';
+    fetch(url)
+      .then((response) => response.json())
+      .then(json => {
+        setData(json.data)
+      });
+  }, []);
+
   return (
     <div className="flex flex-wrap">
-      <Cardv2
-        name="Careerdekho Ai"
-        coverImg="https://openai.com/content/images/2022/05/twitter-1.png"
-        title="CAREERDEKHO Ai — AI Career Discovery Tool"
-        description="Find the perfect career for you with the help of AI. Let our AI-powered 
-        career discovery tool help you find the perfect career fit!"
-        price="FREE"
-        tag_1="Job"
-        tag_2="Career"
-        url="https://careerdekho.ai/"
-        icon="https://careerdekho.ai/favicon.svg"
-      />
-      <Cardv2
-        name="ChatGPT"
-        coverImg="https://careerdekho.ai/media/careerdekho-bg.png"
-        title="chatGPT is conversational ai from OpenAI"
-        description="OpenAI is an AI research and deployment company. Our mission is to ensure 
-        that artificial general intelligence benefits all of humanity."
-        price="FREE"
-        tag_1="chatbot"
-        tag_2="conversational"
-        url="https://careerdekho.ai/"
-        icon="https://openai.com/content/images/size/w256h256/2020/09/icon-1.png"
-      />
-      <Cardv2
-        name="Careerdekho Ai"
-        coverImg="https://careerdekho.ai/media/careerdekho-bg.png"
-        title="CAREERDEKHO Ai — AI Career Discovery Tool"
-        description="Find the perfect career for you with the help of AI. Let our AI-powered 
-        career discovery tool help you find the perfect career fit!"
-        price="FREE"
-        tag_1="Job"
-        tag_2="Career"
-        url="https://careerdekho.ai/"
-        icon="https://careerdekho.ai/favicon.svg"
-      />
-       <Cardv2
-        name="Careerdekho Ai"
-        coverImg="https://openai.com/content/images/2022/05/twitter-1.png"
-        title="CAREERDEKHO Ai — AI Career Discovery Tool"
-        description="Find the perfect career for you with the help of AI. Let our AI-powered 
-        career discovery tool help you find the perfect career fit!"
-        price="FREE"
-        tag_1="Job"
-        tag_2="Career"
-        url="https://careerdekho.ai/"
-        icon="https://careerdekho.ai/favicon.svg"
-      />
-      <Cardv2
-        name="ChatGPT"
-        coverImg="https://careerdekho.ai/media/careerdekho-bg.png"
-        title="chatGPT is conversational ai from OpenAI"
-        description="OpenAI is an AI research and deployment company. Our mission is to ensure 
-        that artificial general intelligence benefits all of humanity."
-        price="FREE"
-        tag_1="chatbot"
-        tag_2="conversational"
-        url="https://careerdekho.ai/"
-        icon="https://openai.com/content/images/size/w256h256/2020/09/icon-1.png"
-      />
-      <Cardv2
-        name="Careerdekho Ai"
-        coverImg="https://careerdekho.ai/media/careerdekho-bg.png"
-        title="CAREERDEKHO Ai — AI Career Discovery Tool"
-        description="Find the perfect career for you with the help of AI. Let our AI-powered 
-        career discovery tool help you find the perfect career fit!"
-        price="FREE"
-        tag_1="Job"
-        tag_2="Career"
-        url="https://careerdekho.ai/"
-        icon="https://careerdekho.ai/favicon.svg"
-      />
-       <Cardv2
-        name="Careerdekho Ai"
-        coverImg="https://openai.com/content/images/2022/05/twitter-1.png"
-        title="CAREERDEKHO Ai — AI Career Discovery Tool"
-        description="Find the perfect career for you with the help of AI. Let our AI-powered 
-        career discovery tool help you find the perfect career fit!"
-        price="FREE"
-        tag_1="Job"
-        tag_2="Career"
-        url="https://careerdekho.ai/"
-        icon="https://careerdekho.ai/favicon.svg"
-      />
-      <Cardv2
-        name="ChatGPT"
-        coverImg="https://careerdekho.ai/media/careerdekho-bg.png"
-        title="chatGPT is conversational ai from OpenAI"
-        description="OpenAI is an AI research and deployment company. Our mission is to ensure 
-        that artificial general intelligence benefits all of humanity."
-        price="FREE"
-        tag_1="chatbot"
-        tag_2="conversational"
-        url="https://careerdekho.ai/"
-        icon="https://openai.com/content/images/size/w256h256/2020/09/icon-1.png"
-      />
-      <Cardv2
-        name="Careerdekho Ai"
-        coverImg="https://careerdekho.ai/media/careerdekho-bg.png"
-        title="CAREERDEKHO Ai — AI Career Discovery Tool"
-        description="Find the perfect career for you with the help of AI. Let our AI-powered 
-        career discovery tool help you find the perfect career fit!"
-        price="FREE"
-        tag_1="Job"
-        tag_2="Career"
-        url="https://careerdekho.ai/"
-        icon="https://careerdekho.ai/favicon.svg"
-      />
-       <Cardv2
-        name="Careerdekho Ai"
-        coverImg="https://openai.com/content/images/2022/05/twitter-1.png"
-        title="CAREERDEKHO Ai — AI Career Discovery Tool"
-        description="Find the perfect career for you with the help of AI. Let our AI-powered 
-        career discovery tool help you find the perfect career fit!"
-        price="FREE"
-        tag_1="Job"
-        tag_2="Career"
-        url="https://careerdekho.ai/"
-        icon="https://careerdekho.ai/favicon.svg"
-      />
-      <Cardv2
-        name="ChatGPT"
-        coverImg="https://careerdekho.ai/media/careerdekho-bg.png"
-        title="chatGPT is conversational ai from OpenAI"
-        description="OpenAI is an AI research and deployment company. Our mission is to ensure 
-        that artificial general intelligence benefits all of humanity."
-        price="FREE"
-        tag_1="chatbot"
-        tag_2="conversational"
-        url="https://careerdekho.ai/"
-        icon="https://openai.com/content/images/size/w256h256/2020/09/icon-1.png"
-      />
-      <Cardv2
-        name="Careerdekho Ai"
-        coverImg="https://careerdekho.ai/media/careerdekho-bg.png"
-        title="CAREERDEKHO Ai — AI Career Discovery Tool"
-        description="Find the perfect career for you with the help of AI. Let our AI-powered 
-        career discovery tool help you find the perfect career fit!"
-        price="FREE"
-        tag_1="Job"
-        tag_2="Career"
-        url="https://careerdekho.ai/"
-        icon="https://careerdekho.ai/favicon.svg"
-      />
-       <Cardv2
-        name="Careerdekho Ai"
-        coverImg="https://openai.com/content/images/2022/05/twitter-1.png"
-        title="CAREERDEKHO Ai — AI Career Discovery Tool"
-        description="Find the perfect career for you with the help of AI. Let our AI-powered 
-        career discovery tool help you find the perfect career fit!"
-        price="FREE"
-        tag_1="Job"
-        tag_2="Career"
-        url="https://careerdekho.ai/"
-        icon="https://careerdekho.ai/favicon.svg"
-      />
-      <Cardv2
-        name="ChatGPT"
-        coverImg="https://careerdekho.ai/media/careerdekho-bg.png"
-        title="chatGPT is conversational ai from OpenAI"
-        description="OpenAI is an AI research and deployment company. Our mission is to ensure 
-        that artificial general intelligence benefits all of humanity."
-        price="FREE"
-        tag_1="chatbot"
-        tag_2="conversational"
-        url="https://careerdekho.ai/"
-        icon="https://openai.com/content/images/size/w256h256/2020/09/icon-1.png"
-      />
-      <Cardv2
-        name="Careerdekho Ai"
-        coverImg="https://careerdekho.ai/media/careerdekho-bg.png"
-        title="CAREERDEKHO Ai — AI Career Discovery Tool"
-        description="Find the perfect career for you with the help of AI. Let our AI-powered 
-        career discovery tool help you find the perfect career fit!"
-        price="FREE"
-        tag_1="Job"
-        tag_2="Career"
-        url="https://careerdekho.ai/"
-        icon="https://careerdekho.ai/favicon.svg"
-      />
-       <Cardv2
-        name="Careerdekho Ai"
-        coverImg="https://openai.com/content/images/2022/05/twitter-1.png"
-        title="CAREERDEKHO Ai — AI Career Discovery Tool"
-        description="Find the perfect career for you with the help of AI. Let our AI-powered 
-        career discovery tool help you find the perfect career fit!"
-        price="FREE"
-        tag_1="Job"
-        tag_2="Career"
-        url="https://careerdekho.ai/"
-        icon="https://careerdekho.ai/favicon.svg"
-      />
-      <Cardv2
-        name="ChatGPT"
-        coverImg="https://careerdekho.ai/media/careerdekho-bg.png"
-        title="chatGPT is conversational ai from OpenAI"
-        description="OpenAI is an AI research and deployment company. Our mission is to ensure 
-        that artificial general intelligence benefits all of humanity."
-        price="FREE"
-        tag_1="chatbot"
-        tag_2="conversational"
-        url="https://careerdekho.ai/"
-        icon="https://openai.com/content/images/size/w256h256/2020/09/icon-1.png"
-      />
-      <Cardv2
-        name="Careerdekho Ai"
-        coverImg="https://careerdekho.ai/media/careerdekho-bg.png"
-        title="CAREERDEKHO Ai — AI Career Discovery Tool"
-        description="Find the perfect career for you with the help of AI. Let our AI-powered 
-        career discovery tool help you find the perfect career fit!"
-        price="FREE"
-        tag_1="Job"
-        tag_2="Career"
-        url="https://careerdekho.ai/"
-        icon="https://careerdekho.ai/favicon.svg"
-      />
-       <Cardv2
-        name="Careerdekho Ai"
-        coverImg="https://openai.com/content/images/2022/05/twitter-1.png"
-        title="CAREERDEKHO Ai — AI Career Discovery Tool"
-        description="Find the perfect career for you with the help of AI. Let our AI-powered 
-        career discovery tool help you find the perfect career fit!"
-        price="FREE"
-        tag_1="Job"
-        tag_2="Career"
-        url="https://careerdekho.ai/"
-        icon="https://careerdekho.ai/favicon.svg"
-      />
-      <Cardv2
-        name="ChatGPT"
-        coverImg="https://careerdekho.ai/media/careerdekho-bg.png"
-        title="chatGPT is conversational ai from OpenAI"
-        description="OpenAI is an AI research and deployment company. Our mission is to ensure 
-        that artificial general intelligence benefits all of humanity."
-        price="FREE"
-        tag_1="chatbot"
-        tag_2="conversational"
-        url="https://careerdekho.ai/"
-        icon="https://openai.com/content/images/size/w256h256/2020/09/icon-1.png"
-      />
-      <Cardv2
-        name="Careerdekho Ai"
-        coverImg="https://careerdekho.ai/media/careerdekho-bg.png"
-        title="CAREERDEKHO Ai — AI Career Discovery Tool"
-        description="Find the perfect career for you with the help of AI. Let our AI-powered 
-        career discovery tool help you find the perfect career fit!"
-        price="FREE"
-        tag_1="Job"
-        tag_2="Career"
-        url="https://careerdekho.ai/"
-        icon="https://careerdekho.ai/favicon.svg"
-      />
-       <Cardv2
-        name="Careerdekho Ai"
-        coverImg="https://openai.com/content/images/2022/05/twitter-1.png"
-        title="CAREERDEKHO Ai — AI Career Discovery Tool"
-        description="Find the perfect career for you with the help of AI. Let our AI-powered 
-        career discovery tool help you find the perfect career fit!"
-        price="FREE"
-        tag_1="Job"
-        tag_2="Career"
-        url="https://careerdekho.ai/"
-        icon="https://careerdekho.ai/favicon.svg"
-      />
-      <Cardv2
-        name="ChatGPT"
-        coverImg="https://careerdekho.ai/media/careerdekho-bg.png"
-        title="chatGPT is conversational ai from OpenAI"
-        description="OpenAI is an AI research and deployment company. Our mission is to ensure 
-        that artificial general intelligence benefits all of humanity."
-        price="FREE"
-        tag_1="chatbot"
-        tag_2="conversational"
-        url="https://careerdekho.ai/"
-        icon="https://openai.com/content/images/size/w256h256/2020/09/icon-1.png"
-      />
-      <Cardv2
-        name="Careerdekho Ai"
-        coverImg="https://careerdekho.ai/media/careerdekho-bg.png"
-        title="CAREERDEKHO Ai — AI Career Discovery Tool"
-        description="Find the perfect career for you with the help of AI. Let our AI-powered 
-        career discovery tool help you find the perfect career fit!"
-        price="FREE"
-        tag_1="Job"
-        tag_2="Career"
-        url="https://careerdekho.ai/"
-        icon="https://careerdekho.ai/favicon.svg"
-      />
+      {data ?
+        data.map((item) => {
+          return (
+            <Cardv2
+              key={item.id}
+              item={item}
+              name={item.name}
+              website={item.website}
+              title={item.title}
+              description={item.description}
+              price={item.price}
+              tag1={item.tag1}
+              tag2={item?.tag2}
+              tag3={item?.tag3}
+              tag4={item?.tag4}
+              url={item.url}
+              icon={item.icon}
+              slug={item.slug}
+              upvote={item.upvote}
+              id={item.id}
+            />
+          )
+        })
+        :
+        <div className="text-lg text-center w-full mt-6">Loading...</div>
+      }
     </div>
-
   );
 };
 
