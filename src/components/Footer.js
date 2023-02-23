@@ -7,7 +7,7 @@ const Footer = () => {
             <div>
                 About
             </div>
-            <div>Hi Ai hunters, <a href='https://sagarjaid.com/'  target="_blank" className='text-blue-600'>Sagar Jaid</a> this side. Self taught Software Engineer</div>
+            <div>Hi AI hunters, <a href='https://sagarjaid.com/'  target="_blank" className='text-blue-600'>Sagar Jaid</a> this side. <br/>Self taught Software Engineer</div>
             <div><a href='https://www.linkedin.com/in/sagarjaid/' target="_blank" className='text-blue-600 underline'>Linkedin</a></div>
             </div>
         </div>

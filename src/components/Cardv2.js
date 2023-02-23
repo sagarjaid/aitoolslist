@@ -36,6 +36,7 @@ const Cardv2 = ({ name, description, title, price, tag1, tag2, tag3, tag4, url, 
     }
 
     return (
+
         <div className="w-full sdm:w-1/2 l:w-1/3">
             <div className='flex flex-col gap-2 p-4 rounded-xl border border-gray-300 m-1 hover:shadow-md hover:border-black'>
                 <div className='flex justify-between items-center'>

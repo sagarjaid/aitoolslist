@@ -1,11 +1,24 @@
-import React from 'react'
 import Head from "next/head";
 import Footer from '@/components/Footer';
 import Nav from '@/components/Nav';
 import Cardv2 from '@/components/Cardv2';
 import Tool from '@/components/Tool';
+import React, { useEffect, useState } from "react";
 
 const AiPage = () => {
+  const [data, setData] = useState('');
+
+  useEffect(() => {
+    const urlPrams = window.location.pathname.replace("/tool/", "")
+    let url = `https://api.sheety.co/33d9ec27f5c7dfb130eb655baacab48d/aitoolslist/data?filter[slug]=${urlPrams}`;
+    fetch(url)
+      .then((response) => response.json())
+      .then(json => {
+        setData(json.data)
+      });
+  }, []);
+
+
   return (
     <>
       <Head>
@@ -16,57 +29,32 @@ const AiPage = () => {
       </Head>
       <main className="flex flex-col mx-auto max-w-7xl gap-8 s:p-3 xs:px-4">
         <Nav />
-        <Tool
-          name="Careerdekho Ai"
-          coverImg="https://openai.com/content/images/2022/05/twitter-1.png"
-          title="CAREERDEKHO Ai — AI Career Discovery Tool"
-          description="Find the perfect career for you with the help of AI. Let our AI-powered career discovery tool help you find the perfect career fit!"
-          price="FREE"
-          tag1="Job"
-          tag2="Career"
-          url="https://careerdekho.ai/"
-          icon="https://careerdekho.ai/favicon.svg" 
-          />
-        <div className='text-xl'>
-          {"Careerdekho Ai"} Alternative AI Tools
-        </div>
-        <div className="flex flex-wrap">
-          <Cardv2
-            name="Careerdekho Ai"
-            coverImg="https://openai.com/content/images/2022/05/twitter-1.png"
-            title="CAREERDEKHO Ai — AI Career Discovery Tool"
-            description="Find the perfect career for you with the help of AI. Let our AI-powered 
-        career discovery tool help you find the perfect career fit!"
-            price="FREE"
-            tag1="Job"
-            tag2="Career"
-            url="https://careerdekho.ai/"
-            icon="https://careerdekho.ai/favicon.svg"
-          />
-          <Cardv2
-            name="Careerdekho Ai"
-            coverImg="https://openai.com/content/images/2022/05/twitter-1.png"
-            title="CAREERDEKHO Ai — AI Career Discovery Tool"
-            description="Find the perfect career for you with the help of AI. Let our AI-powered 
-        career discovery tool help you find the perfect career fit!"
-            price="FREE"
-            tag1="Job"
-            tag2="Career"
-            url="https://careerdekho.ai/"
-            icon="https://careerdekho.ai/favicon.svg"
-          />
-          <Cardv2
-            name="Careerdekho Ai"
-            coverImg="https://openai.com/content/images/2022/05/twitter-1.png"
-            title="CAREERDEKHO Ai — AI Career Discovery Tool"
-            description="Find the perfect career for you with the help of AI. Let our AI-powered career discovery tool help you find the perfect career fit!"
-            price="FREE"
-            tag1="Job"
-            tag2="Career"
-            url="https://careerdekho.ai/"
-            icon="https://careerdekho.ai/favicon.svg"
-          />
-        </div>
+
+        {data ?
+        data.map((item) => {
+          return (
+            <Tool
+              key={item.id}
+              item={item}
+              coverImg={item.coverImg}
+              name={item.name}
+              website={item.website}
+              title={item.title}
+              description={item.description}
+              price={item.price}
+              tag1={item.tag1}
+              tag2={item?.tag2}
+              tag3={item?.tag3}
+              tag4={item?.tag4}
+              url={item.url}
+              upvote={item.upvote}
+              id={item.id}
+            />
+          )
+        })
+        :
+        <div className="text-lg text-center w-full mt-6">Loading...</div>
+      }
       </main>
       <Footer />
     </>
