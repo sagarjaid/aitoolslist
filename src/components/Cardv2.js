@@ -22,7 +22,7 @@ const Cardv2 = ({ name, description, title, price, tag1, tag2, tag3, tag4, url, 
         setUpVoteCount((preState) => preState + 1)
         let url = `https://api.sheety.co/33d9ec27f5c7dfb130eb655baacab48d/aitoolslist/data/${id}`;
         let body = {
-            datum: {...item, upvote:upVoteCount+1}
+            datum: { ...item, upvote: upVoteCount + 1 }
 
         }
         fetch(url, {
@@ -30,9 +30,9 @@ const Cardv2 = ({ name, description, title, price, tag1, tag2, tag3, tag4, url, 
             body: JSON.stringify(body),
             headers: {
                 'Content-Type': 'application/json'
-              }
+            }
         })
-            .then((response) => response.json())     
+            .then((response) => response.json())
     }
 
     return (
@@ -59,16 +59,18 @@ const Cardv2 = ({ name, description, title, price, tag1, tag2, tag3, tag4, url, 
                     {tag3 && <span className='border rounded-full max-w-max px-2 py-1'><a href={`/${tag3}`} target="_blank">{tag3}</a></span>}
                     {tag4 && <span className='border rounded-full max-w-max px-2 py-1'><a href={`/${tag4}`} target="_blank">{tag4}</a></span>}
                 </div>
-                <div className='text-sm'>{description}</div>
+                <a className='cursor-pointer' href={`/tool/${slug}`} target="_blank">
+                    <div className='text-sm'>{description}</div>
+                </a>
                 <div className='flex justify-between items-center mt-4'>
                     <div className='text-xl font-medium'>{price}</div>
                     <div className='flex gap-2'>
                         <button disabled={isDisable} onClick={handleUpvote} className='flex justify-around gap-2 p-1 px-2 items-center rounded-lg border cursor-pointer disabled:cursor-not-allowed disabled:text-green-700 disabled:border-green-600'>
-                           {isDisable ?<svg className='w-3 h-3' viewBox="0 0 25 21" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            {isDisable ? <svg className='w-3 h-3' viewBox="0 0 25 21" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.6417 1.43529C12.0298 0.786244 12.9701 0.786243 13.3583 1.43529L24.1525 19.4868C24.5511 20.1533 24.0709 21 23.2943 21H1.70575C0.929121 21 0.448912 20.1533 0.847488 19.4868L11.6417 1.43529Z" fill="currentColor" />
                             </svg> : <svg className='w-3 h-3' viewBox="0 0 25 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.6417 1.43529C12.0298 0.786244 12.9701 0.786243 13.3583 1.43529L24.1525 19.4868C24.5511 20.1533 24.0709 21 23.2943 21H1.70575C0.929121 21 0.448912 20.1533 0.847488 19.4868L11.6417 1.43529Z" fill="currentColor" />
-                            </svg>} 
+                            </svg>}
                             <span className='text-xs'>{upVoteCount}</span>
                         </button>
                         <button onClick={handleOpenTool} className='flex max-w-fit justify-center items-center border text-black text-xs pr-2 pl-3 rounded-full hover:bg-black hover:text-white'>
