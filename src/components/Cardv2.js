@@ -127,7 +127,7 @@ const Cardv2 = ({
             src={checkURL(icon) ? icon : `${website}${icon}`}
           />
         </div>
-        <div className="flex gap-2 text-sm">
+        <div className="flex gap-2 text-sm flex-wrap">
           {tag1 && (
             <span className="border rounded-full max-w-max px-2 py-1">
               <a href={`/${tag1URL || tag1 }`} target="_blank">
