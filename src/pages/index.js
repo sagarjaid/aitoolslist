@@ -14,7 +14,7 @@ export default function Home({ data }) {
   const handleInput = (e) => {
     setValue(e.target.value)
     console.log(e.target.value);
-    const filterData = data.filter((item) => item.name.toLowerCase().includes(value.toLowerCase()))
+    const filterData = data.filter((item) => item.name.toLowerCase().includes(value.toLowerCase()) ||  item.tags.toLowerCase().includes(value.toLowerCase()))
     setSearchData(filterData)
   }
 

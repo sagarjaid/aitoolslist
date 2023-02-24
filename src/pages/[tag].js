@@ -45,7 +45,7 @@ const ToolsList = ({ data, query, TagName }) => {
                 </span>
             </nav>
             <div >
-               {data[0] && <h1 className='text-2xl'>TOP {TagName} AI TOOLS LIST</h1>}
+                {data[0] && <h1 className='text-2xl'>TOP {TagName} AI TOOLS LIST</h1>}
             </div>
             <div className="flex flex-wrap">
                 {data ? (
@@ -123,10 +123,10 @@ export async function getServerSideProps(context) {
     const res = await fetch(url);
     const resdata = await res.json();
 
-    let tagsDATA =[]
+    let tagsDATA = []
 
-    resdata.data.filter((el)=> {
-        if(el.tags.includes(tag)){
+    resdata.data.filter((el) => {
+        if (el.tags.includes(tag)) {
             return tagsDATA.push(el)
         }
     });
