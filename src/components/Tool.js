@@ -59,6 +59,48 @@ const Tool = ({
       });
   }, []);
 
+  const TagsList = [
+    { name: "search", url: "search-engine-ai" },
+    { name: "productivity", url: "productivity-ai" },
+    { name: "legal", url: "legal-ai" },
+    { name: "education", url: "education-ai" },
+    { name: "resume", url: "resume-ai" },
+    { name: "job", url: "job-ai" },
+    { name: "professional networking", url: "professional-networking-ai" },
+    { name: "noise cancellation", url: "noise-cancellation-ai" },
+    { name: "ai model generation", url: "ai-model-generation-ai" },
+    { name: "FREE", url: "free" },
+    { name: "PAID", url: "paid" },
+    { name: "FREEMIUM", url: "freeminum" },
+    { name: "chat", url: "chat-ai" },
+    { name: "copywriting", url: "copywriting-ai" },
+    { name: "design", url: "design-ai" },
+    { name: "content", url: "content-ai" },
+    { name: "video", url: "video-ai" },
+    { name: "audio", url: "audio-ai" },
+    { name: "image", url: "image" },
+    { name: "writing assistant", url: "writing-assistant-ai" },
+    { name: "code", url: "code-ai" },
+    { name: "avatar", url: "avatar-gnration-ai" },
+    { name: "career", url: "career-ai" },
+    { name: "marketing", url: "marketing-ai" },
+    { name: "conversational", url: "conversational-ai" },
+    { name: "project management", url: "project-management-ai" },
+    { name: "news", url: "news-ai" },
+    { name: "resume", url: "resume-ai" },
+    { name: "job", url: "job-ai" },
+];
+
+    const query1 = TagsList.filter((el) => el.name?.toLowerCase() == tag1?.toLowerCase())
+    const query2 = TagsList.filter((el) => el.name?.toLowerCase() == tag2?.toLowerCase())
+    const query3 = TagsList.filter((el) => el.name?.toLowerCase() == tag3?.toLowerCase())
+    const query4 = TagsList.filter((el) => el.name?.toLowerCase() == tag4?.toLowerCase())
+
+    const tag1URL = query1[0]?.url
+    const tag2URL = query2[0]?.url
+    const tag3URL = query3[0]?.url
+    const tag4URL = query4[0]?.url
+
   return (
     <>
       <div className="flex flex-col lg:flex-row m-1 rounded-xl">
@@ -76,28 +118,28 @@ const Tool = ({
             <span>Tags:</span>
             {tag1 && (
               <span className="border rounded-full max-w-max px-2 py-1">
-                <a href={`/${tag1}`} target="_blank">
+                <a href={`/${tag1URL || tag1 }`} target="_blank">
                   {tag1}
                 </a>
               </span>
             )}
             {tag2 && (
               <span className="border rounded-full max-w-max px-2 py-1">
-                <a href={`/${tag2}`} target="_blank">
+                <a href={`/${tag2URL || tag2 }`} target="_blank">
                   {tag2}
                 </a>
               </span>
             )}
             {tag3 && (
               <span className="border rounded-full max-w-max px-2 py-1">
-                <a href={`/${tag3}`} target="_blank">
+                <a href={`/${tag3URL || tag3 }`} target="_blank">
                   {tag3}
                 </a>
               </span>
             )}
             {tag4 && (
               <span className="border rounded-full max-w-max px-2 py-1">
-                <a href={`/${tag4}`} target="_blank">
+                <a href={`/${tag4URL || tag4}`} target="_blank">
                   {tag4}
                 </a>
               </span>
@@ -163,7 +205,7 @@ const Tool = ({
             <div>{description}</div>
           </div>
           <div className="text-sm underline cursor-pointer">
-            <a href="/">Submit your tool!</a>
+            <a href="https://tally.so/r/n0d8bZ" target="_blank">Submit your tool for FREE!</a>
           </div>
           <div className="text-xs">
             * means they have a free plan but its limited

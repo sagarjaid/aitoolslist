@@ -3,9 +3,11 @@ import React from "react";
 const Nav = () => {
   return (
     <nav className="flex row justify-between items-center py-4">
-      <span className="font-medium smd:text-xl border py-2 px-4 hover:text-black text-white hover:border-black hover:bg-white bg-black cursor-pointer rounded-md ">
-        <a href="/">AiToolsList</a>
+      <a href="/">
+      <span className="font-medium smd:text-xl py-2 px-4 text-white bg-black cursor-pointer rounded-full rounded-tl-sm ">
+        AiToolsList
       </span>
+      </a>
       <span>
         <ul className="flex row gap-4 cursor-pointer">
           <li className="hover:font-semibold">
