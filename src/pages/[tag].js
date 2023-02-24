@@ -118,10 +118,20 @@ export async function getServerSideProps(context) {
     const query = TagsList.filter((el) => el.url == urlPrams)
     const tag = query[0]?.name
     const TagName = tag?.toUpperCase()
-    let url = `https://api.sheety.co/33d9ec27f5c7dfb130eb655baacab48d/aitoolslist/data?filter[tag1]=${tag}`
+
+    let url = `https://api.sheety.co/33d9ec27f5c7dfb130eb655baacab48d/aitoolslist/data`
     const res = await fetch(url);
     const resdata = await res.json();
-    const data = resdata.data;
+
+    let tagsDATA =[]
+
+    resdata.data.filter((el)=> {
+        if(el.tags.includes(tag)){
+            return tagsDATA.push(el)
+        }
+    });
+
+    const data = tagsDATA;
     return { props: { data, query, TagName } };
 }
 
