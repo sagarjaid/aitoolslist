@@ -4,7 +4,9 @@ const Hero = () => {
   return (
     <div className="flex flex-col justify-center gap-4 items-center">
       <div className="flex flex-col text-center justify-center gap-1 items-center">
-        <div className="text-2xl font-semibold">1000+ AI Tools for Every Use Case in Life</div>
+        <div className="text-2xl font-semibold">
+          1000+ AI Tools for Every Use Case in Life
+        </div>
         <div className="text-sm">A Comprehensive List of AI Tools</div>
       </div>
       <form class="text-gray-600 w-full sm:w-3/4 rounded-full border-2 sm:border-2 border-black flex justify-around items-center px-2">

@@ -18,7 +18,7 @@ const Tags = () => {
     { name: "career", url: "career-ai" },
     { name: "marketing", url: "marketing-ai" },
     { name: "Conversational", url: "Conversational-ai" },
-  ]
+  ];
 
   // const TagsListTwo = ["Project Management", "News", "Search", "Productivity", "Legal", "Education", "Resume", "Job", "Noise Cancellation", "Model Generation", "FREE", "PAID", "FREEMIUM"]
 
@@ -37,10 +37,10 @@ const Tags = () => {
     { name: "FREE", url: "free" },
     { name: "PAID", url: "paid" },
     { name: "FREEMIUM", url: "freeminum" },
-  ]
+  ];
   const handleToogle = () => {
-    setToogle(!toogle)
-  }
+    setToogle(!toogle);
+  };
 
   return (
     <div className="flex justify-center items-center flex-wrap gap-2 w-full">
@@ -51,9 +51,8 @@ const Tags = () => {
               <a href={`/${item.url}`}>{item.name}</a>
             </div>
           </div>
-        )
-      })
-      }
+        );
+      })}
       {toogle ? (
         <>
           {TagsListTwo?.map((item) => {
@@ -63,11 +62,12 @@ const Tags = () => {
                   <a href={`/${item.url}`}>{item.name}</a>
                 </div>
               </div>
-            )
-          })
-          }
+            );
+          })}
         </>
-      ) : ""}
+      ) : (
+        ""
+      )}
       {
         <div onClick={handleToogle}>
           <div className="text-black w-max rounded-full border border-black text-xs p-2 px-4 cursor-pointer">

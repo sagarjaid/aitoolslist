@@ -2,20 +2,21 @@ import React, { useEffect, useState } from "react";
 import Cardv2 from "./Cardv2";
 
 const Cards = () => {
-  const [data, setData] = useState('');
+  const [data, setData] = useState("");
 
   useEffect(() => {
-    let url = 'https://api.sheety.co/33d9ec27f5c7dfb130eb655baacab48d/aitoolslist/data';
+    let url =
+      "https://api.sheety.co/33d9ec27f5c7dfb130eb655baacab48d/aitoolslist/data";
     fetch(url)
       .then((response) => response.json())
-      .then(json => {
-        setData(json.data)
+      .then((json) => {
+        setData(json.data);
       });
   }, []);
 
   return (
     <div className="flex flex-wrap">
-      {data ?
+      {data ? (
         data.map((item) => {
           return (
             <Cardv2
@@ -36,11 +37,11 @@ const Cards = () => {
               upvote={item.upvote}
               id={item.id}
             />
-          )
+          );
         })
-        :
+      ) : (
         <div className="text-lg text-center w-full mt-6">Loading...</div>
-      }
+      )}
     </div>
   );
 };
