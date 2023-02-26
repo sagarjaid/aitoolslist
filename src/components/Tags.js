@@ -2,12 +2,12 @@ import React, { useState } from "react";
 
 const Tags = () => {
   const [toogle, setToogle] = useState(false);
-  // const TagsListOne = ["Chat", "Copywriting", "Design", "Content", "Video", "Audio", "Image", "Writing Assistant", "Code", "Avatar", "Career", "Marketing", "Conversational"]
+  // const TagsListOne = ["Chat", "Copywriting", "design", "Content", "Video", "Audio", "Image", "Writing Assistant", "Code", "Avatar", "Career", "Marketing", "conversational"]
 
   const TagsListOne = [
     { name: "chat", url: "chat-ai" },
     { name: "copywriting", url: "copywriting-ai" },
-    { name: "Design", url: "design-ai" },
+    { name: "design", url: "design-ai" },
     { name: "content", url: "content-ai" },
     { name: "video", url: "video-ai" },
     { name: "audio", url: "audio-ai" },
@@ -17,14 +17,16 @@ const Tags = () => {
     { name: "avatar", url: "avatar-gnration-ai" },
     { name: "career", url: "career-ai" },
     { name: "marketing", url: "marketing-ai" },
-    { name: "Conversational", url: "Conversational-ai" },
+    { name: "conversational", url: "conversational-ai" },
+    { name: "project management", url: "project-management-ai" },
+    { name: "news", url: "news-ai" },
+    { name: "resume", url: "resume-ai" },
+    { name: "job", url: "job-ai" },
   ];
 
   // const TagsListTwo = ["Project Management", "News", "Search", "Productivity", "Legal", "Education", "Resume", "Job", "Noise Cancellation", "Model Generation", "FREE", "PAID", "FREEMIUM"]
 
   const TagsListTwo = [
-    { name: "project management", url: "project-management-ai" },
-    { name: "news", url: "news-ai" },
     { name: "search", url: "search-engine-ai" },
     { name: "productivity", url: "productivity-ai" },
     { name: "legal", url: "legal-ai" },
