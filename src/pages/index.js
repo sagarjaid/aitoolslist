@@ -223,5 +223,5 @@ export async function getStaticProps() {
   const res = await fetch(url);
   const resdata = await res.json();
   const data = resdata.data;
-  return { props: { data } };
+  return { props: { data }, revalidate: 86400 };
 }
