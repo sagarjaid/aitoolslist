@@ -217,7 +217,7 @@ export default function Home({ data }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   let url =
     "https://api.sheety.co/33d9ec27f5c7dfb130eb655baacab48d/aitoolslist/data";
   const res = await fetch(url);
