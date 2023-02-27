@@ -2,10 +2,17 @@ import "@/styles/globals.css";
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
+import Head from "next/head";
 
 export default function App({ Component, pageProps }) {
   return (
     <>
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="katn1XR0AHB0wtPbf4SWFDxUQ_DHuylksHTaGdkrGiA"
+        />
+      </Head>
       <Script
         strategy="afterInteractive"
         onLoad={() => {
